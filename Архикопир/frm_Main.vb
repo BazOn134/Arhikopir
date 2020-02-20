@@ -276,7 +276,6 @@ Public Class Globall
                 mMassDEL(UBound(mMassDEL)) = itemMP
             End If
         Next
-
         'Dim w1 = ЧтениеТХТВМассив("C:\mMassUPD.txt")
         'ВыводМассиваТХТ(mMassIst, "mMassIst")
         If Not mMassNEW Is Nothing Then Копирование(mMassNEW, "НАЧАТА ЗАПИСЬ НОВЫХ", "НОВЫЙ:    ") : ВыводМассиваТХТ(mMassNEW, "mMassNEW")
@@ -287,7 +286,6 @@ Public Class Globall
 
     Private Sub Удаление(mMass() As String, sTextBegin As String, sTextLog As String)
         'sFoldIst As String, sFoldPol As String
-        'Stop
         Dim sPath As String, sArch As String
         Dim sPathArch As String = "D:\АрхивСети\Архивированное\"
         Loger.LogProg(sTextBegin & " " & Now)
@@ -368,21 +366,12 @@ Public Class Globall
     Private Sub ЗаписьУдаленных(mMass, sName)
         'ТОДО доработать запись удаленных
         ВыводМассиваТХТ(mMass, sName)
-        MsgBox(mMass, , "mMass")
+        'MsgBox(mMass, , "mMass")
         'копировать файл с переименованием в "Архивированное"
         'удалить на старом месте
         'проверить папку на пустоту
         'если пустая, то проверить наличие пустой папки в исходнике. при необходимости - удалить
     End Sub
-
-    'Private Sub ЗаписьНовых(mMass, sName)
-    '    ВыводМассиваТХТ(mMass, sName)
-    '    Копирование(mMass, "НАЧАТА ЗАПИСЬ НОВЫХ", "НОВЫЙ:    ")
-    'End Sub
-
-    'Private Sub Обновление(mMass() As String)
-    '    'ТОДО ПРОДОЛЖЕНИЕ-ПРОДОЛЖЕНИЕ-ПРОДОЛЖЕНИЕ
-    'End Sub
 
     Private Sub ВыводМассиваТХТ(mMass, sName)
         File.WriteAllLines("C:\" & sName & ".txt", mMass, System.Text.Encoding.UTF8)
