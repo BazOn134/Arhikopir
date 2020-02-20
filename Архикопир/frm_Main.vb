@@ -300,7 +300,7 @@ Public Class Globall
                 'sPath = Replace(sMas, sFoldPol, sFoldIst)
                 sArch = sPathArch & Path.GetFileNameWithoutExtension(sMas) & "  DEL=" & Format(Now, "yyyy-MM-dd") & Path.GetExtension(sMas)
                 If File.Exists(sArch) Then sArch = sPathArch & Path.GetFileNameWithoutExtension(sMas) & "  DEL=" & Format(Now, "yyyy-MM-dd_hhmmss") & Path.GetExtension(sMas)
-                'Копирование устаревшего файла
+                'ТОДО Копирование устаревшего файла
                 Try
                     File.Copy(sMas, sArch, True)
                 Catch
@@ -369,6 +369,7 @@ Public Class Globall
     Private Sub ЗаписьУдаленных(mMass, sName)
         'ТОДО доработать запись удаленных
         ВыводМассиваТХТ(mMass, sName)
+        MsgBox(mMass, , "mMass")
         'копировать файл с переименованием в "Архивированное"
         'удалить на старом месте
         'проверить папку на пустоту

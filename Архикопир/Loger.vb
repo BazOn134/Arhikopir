@@ -30,7 +30,7 @@ Public Class Loger
 
     Shared Sub SessionClose(Optional ByVal Message As String = "")
         If Message = "" Then Message = "   ===   СЕССИЯ ЗАКРЫТА   ===   СЕССИЯ ЗАКРЫТА   ===     " & Now
-        If File.Exists(My.Settings.LogFilePath) Then Stop 'ТОДО срочно дописать закрытие проги
+        'If File.Exists(My.Settings.LogFilePath) Then Stop 'ТОДО срочно дописать закрытие проги
     End Sub
 
     Shared Sub Log(ByVal Message As String, Optional ByVal LogFilePath As String = "")
