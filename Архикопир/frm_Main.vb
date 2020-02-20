@@ -264,7 +264,6 @@ Public Class Globall
                 End If
             End If
         Next
-
         'mMassPol => mMassIst
         For Each itemMP In mMassPol
             sVrem = Replace(itemMP, sFoldPol, sFoldIst)
